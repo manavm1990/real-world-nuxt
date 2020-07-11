@@ -11,6 +11,19 @@ export default {
     NavBar: () =>
       import(/* webpackChunkName: "core" */ '@/components/core/TheNavBar'),
   },
+  head() {
+    return {
+      titleTemplate: '%s - Real World Events',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Where you can find all of the events taking place in your neighborhood',
+        },
+      ],
+    }
+  },
 }
 </script>
 
