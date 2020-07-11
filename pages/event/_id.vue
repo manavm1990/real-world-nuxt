@@ -1,0 +1,25 @@
+<template>
+  <h1>Event #{{ id }}</h1>
+</template>
+
+<script>
+export default {
+  computed: {
+    id() {
+      return this.$route.params.id
+    },
+  },
+  head() {
+    return {
+      title: `Event ${this.id}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `What you NTK about ${this.id}`,
+        },
+      ],
+    }
+  },
+}
+</script>

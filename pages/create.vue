@@ -1,3 +1,0 @@
-<template>
-  <h1>Create an Event</h1>
-</template>
