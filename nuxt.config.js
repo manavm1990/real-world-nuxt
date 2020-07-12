@@ -55,7 +55,7 @@ export default {
     '@nuxtjs/axios',
   ],
   axios: {
-    baseURL: 'http://my-json-server.typicode.com/manavm1990/events',
+    baseURL: 'https://my-json-server.typicode.com/manavm1990/events',
   },
   /*
    ** Build configuration
