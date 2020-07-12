@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   components: {
     EventCard: () =>
@@ -19,17 +21,21 @@ export default {
         '@/components/scoped/home/EventCard'
       ),
   },
-  async asyncData({ $repos, error }) {
+  async fetch({ store, error, $repos }) {
     try {
-      return { events: await $repos.events.index() }
+      await store.dispatch('fetchEvents', { $repos })
     } catch (e) {
       error({
         statusCode: 503,
-        message: `😞 Currently facing issue loading events! Shall we try again?
-        ${e.message}`,
+        message: `😞 Currently facing issue loading events. Shall we try again?
+      ${e.code} - ${e.message}
+      `,
       })
     }
   },
+  computed: mapState({
+    events: ({ events }) => events,
+  }),
   head() {
     return {
       title: 'Event Listing',
