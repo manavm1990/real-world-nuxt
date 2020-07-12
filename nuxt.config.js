@@ -54,10 +54,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
   ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
   axios: {
     baseURL: 'http://my-json-server.typicode.com/manavm1990/events',
   },
