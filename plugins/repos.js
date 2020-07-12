@@ -4,7 +4,7 @@ export default ({ $axios }, inject) => {
   const axiosRepo = createRepository($axios)
 
   const repos = {
-    events: axiosRepo('events'),
+    events: axiosRepo('/events'),
   }
 
   inject('repos', repos)
